@@ -266,9 +266,52 @@ footer {
   padding: 15px;
 }
 /* Responsive Design */
-@media (max-width: 1035px) {
+@media (max-width: 1050px) {
   #grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 
+          "hdr hdr hdr hdr hdr hdr"
+          "drv drv drv drv drv drv"
+          "tem tem tem tem tem tem"
+          "nws nws nws nws nws nws"
+          "cal cal cal cal cal cal"
+          "cir cir cir cir cir cir"
+          "ftr ftr ftr ftr ftr ftr";
+  }
+  .section-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #ff1801;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    grid-column: span 4;
+  }
+  .drivers-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .teams-section {
+    grid-area: tem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .news-section {
+    grid-area: nws;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 8px;
+  }
+  .circuits-section {
+    grid-area: cir;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+}
+@media (max-width: 990px) {
+  #grid {
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas: 
           "hdr hdr hdr hdr hdr hdr"
           "drv drv drv drv drv drv"
@@ -279,22 +322,36 @@ footer {
           "ftr ftr ftr ftr ftr ftr";
   }
   .drivers-section {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .teams-section {
-    grid-area: tem;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+  }
+  .race-calendar {
+    grid-template-columns: repeat(3, 1fr);
   }
   .circuits-section {
-    grid-area: cir;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
+  header h1 {
+    font-size: 2.5rem;
+  }
+header p {
+    font-size: 1rem;
+  }
+.section-title {
+  grid-column: span 3;
+  }
+.teams-section {
+  grid-template-columns: repeat(2,1fr);
+  }
+.side-news {
+    grid-template-columns: 1fr;
+  }
 }
-@media (max-width: 790px) {
+@media (max-width: 750px) {
   #grid {
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas: 
@@ -314,30 +371,14 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  .circuits-section {
-    grid-area: cir;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  header h1 {
-    font-size: 2.5rem;
-}
-header p {
-    font-size: 1rem;
-}
-.nav-menu {
-    flex-direction: column;
-    align-items: center;
-}
 .teams-section {
-  grid-template-columns: repeat(2,1fr);
-}
+  width: 30%;
+  }
 .side-news {
     grid-template-columns: 1fr;
+  }
 }
-}
-@media (max-width: 640px) {
+@media (max-width: 735px) {
   #grid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas: 
@@ -364,14 +405,20 @@ header p {
   .circuits-section {
       grid-template-columns: repeat(2, 1fr);
   }
+  .section-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #ff1801;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    grid-column: span 2;
+  }
   .teams-section {
     grid-template-columns: repeat(2,1fr);
   }
-  .news-section {
-      grid-template-columns: 1fr;
-  }
   .side-news {
-      grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
   footer {
       grid-template-columns: 1fr;
